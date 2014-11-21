@@ -1,0 +1,6 @@
+Tests/bin/*
+Tests/obj/*
+MessageStream2/bin/*
+MessageStream2/obj/*
+MessageStream2.userprefs
+*.suo
