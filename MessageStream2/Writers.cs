@@ -205,6 +205,10 @@ namespace MessageStream2
         internal static void WriteString(object inputData, Stream outputStream)
         {
             string data = (string)inputData;
+            if (data == null)
+            {
+                data = "";
+            }
             byte[] stringBytes = Common.utf8Encoder.GetBytes(data);
             WriteByteArray(stringBytes, outputStream);
         }

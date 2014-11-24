@@ -36,6 +36,7 @@ namespace Tests
             short[] orgShortArray = new short[] { -4, -8, -15, -16, -23, -42 };
             ushort orgUShort = 42;
             ushort[] orgUShortArray = new ushort[] { 4, 8, 15, 16, 23, 42 };
+            string orgEmptyString = null;
             string orgString = "Testing, testing, 123!";
             string[] orgStringArray = new string[]
             {
@@ -55,6 +56,7 @@ namespace Tests
             using (MessageWriter mw = new MessageWriter())
             {
                 mw.Write<bool>(orgBool);
+                mw.Write<bool[]>(new bool[0]);
                 mw.Write<bool[]>(orgBoolArray);
                 mw.Write<byte>(orgByte);
                 mw.Write<byte[]>(orgByteArray);
@@ -80,12 +82,14 @@ namespace Tests
                 mw.Write<short[]>(orgShortArray);
                 mw.Write<ushort>(orgUShort);
                 mw.Write<ushort[]>(orgUShortArray);
+                mw.Write<string>(orgEmptyString);
                 mw.Write<string>(orgString);
                 mw.Write<string[]>(orgStringArray);
                 messageBytes = mw.GetMessageBytes();
             }
             //Read
             bool testBool;
+            bool[] testEmptyBoolArray;
             bool[] testBoolArray;
             byte testByte;
             byte[] testByteArray;
@@ -111,11 +115,13 @@ namespace Tests
             short[] testShortArray;
             ushort testUShort;
             ushort[] testUShortArray;
+            string testEmptyString;
             string testString;
             string[] testStringArray;
             using (MessageReader mr = new MessageReader(messageBytes))
             {
                 testBool = mr.Read<bool>();
+                testEmptyBoolArray = mr.Read<bool[]>();
                 testBoolArray = mr.Read<bool[]>();
                 testByte = mr.Read<byte>();
                 testByteArray = mr.Read<byte[]>();
@@ -141,10 +147,12 @@ namespace Tests
                 testShortArray = mr.Read<short[]>();
                 testUShort = mr.Read<ushort>();
                 testUShortArray = mr.Read<ushort[]>();
+                testEmptyString = mr.Read<string>();
                 testString = mr.Read<string>();
                 testStringArray = mr.Read<string[]>();
             }
             Console.WriteLine("testBool: " + (orgBool == testBool));
+            Console.WriteLine("testEmptyBoolArray: " + orgBoolArray.SequenceEqual(testBoolArray));
             Console.WriteLine("testBoolArray: " + orgBoolArray.SequenceEqual(testBoolArray));
             Console.WriteLine("testByte: " + (orgByte == testByte));
             Console.WriteLine("testByteArray: " + orgByteArray.SequenceEqual(testByteArray));
@@ -170,6 +178,7 @@ namespace Tests
             Console.WriteLine("testShortArray: " + orgShortArray.SequenceEqual(testShortArray));
             Console.WriteLine("testUShort: " + (orgUShort == testUShort));
             Console.WriteLine("testUShortArray: " + orgUShortArray.SequenceEqual(testUShortArray));
+            Console.WriteLine("testEmptyString: " + (String.Empty == testEmptyString));
             Console.WriteLine("testString: " + (orgString == testString));
             Console.WriteLine("testStringArray: " + orgStringArray.SequenceEqual(testStringArray));
             Console.WriteLine("");
