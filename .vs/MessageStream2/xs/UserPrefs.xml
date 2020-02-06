@@ -7,7 +7,8 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MessageStream2" expanded="True">
-            <Node name="MessageStream2" expanded="True" selected="True" />
+            <Node name="MessageStream2" expanded="True" />
+            <Node name="Tests" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -15,7 +16,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Tests PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
