@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{D5603C1C-9214-4566-A376-D97851527A40}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MessageStream2/MessageWriter.cs">
+    <Files>
+      <File FileName="MessageStream2/MessageWriter.cs" Line="83" Column="9" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MessageStream2" expanded="True">
+            <Node name="MessageStream2" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Tests PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

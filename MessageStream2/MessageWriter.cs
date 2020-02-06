@@ -44,7 +44,7 @@ namespace MessageStream2
             registeredTypes.Add(typeof(string[]), Writers.WriteStringArray);
         }
 
-        public static void RegisterType<T>(Action<object,Stream> handler)
+        public static void RegisterType<T>(Action<object, Stream> handler)
         {
             if (registeredTypes.ContainsKey(typeof(T)))
             {
@@ -61,6 +61,11 @@ namespace MessageStream2
             messageStream = new MemoryStream();
         }
 
+        public MessageWriter(byte[] buffer)
+        {
+            messageStream = new MemoryStream(buffer);
+        }
+
         public void Write<T>(T input)
         {
             if (!registeredTypes.ContainsKey(typeof(T)))
@@ -73,6 +78,11 @@ namespace MessageStream2
         public byte[] GetMessageBytes()
         {
             return messageStream.ToArray();
+        }
+
+        public long GetMessageLength()
+        {
+            return messageStream.Position;
         }
 
         public void Dispose()
