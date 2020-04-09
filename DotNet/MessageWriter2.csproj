@@ -3,5 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../MessageStream2/MessageReader.cs"/>
+    <Compile Include="../MessageStream2/Readers.cs"/>
+    <Compile Include="../MessageStream2/Common.cs"/>
+    <Compile Include="../MessageStream2/MessageWriter.cs"/>
+    <Compile Include="../MessageStream2/Writers.cs"/>
+  </ItemGroup>
 
 </Project>
