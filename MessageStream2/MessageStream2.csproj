@@ -38,6 +38,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy MessageWriter2.dll ..\GameData\DarkMultiPlayer\Plugins\MessageWriter2.dll</PostBuildEvent>
+    <PostBuildEvent>copy MessageWriter2.dll ..\GameData\DarkMultiPlayer\Plugins\MessageWriter2.dll
+copy MessageWriter2.dll ..\DMPServer\MessageWriter2.dll</PostBuildEvent>
   </PropertyGroup>
 </Project>
